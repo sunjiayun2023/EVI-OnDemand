@@ -1,0 +1,28 @@
+(dev_notes--2023-05-08)
+
+INPUTS
+ - Replace whmi_by_cbsa.csv
+    - additional column avg_perc_penalty
+    - specify scenario.yaml by setting: percentile_ambient_conditions:avg
+
+- Replace overnight_chg_access_by_cbsa.csv
+    - additional columns: 100pct_hc_access; 0pct_hc_access
+    - specify scenario.yaml by setting: hc_scenario: 100pct_hc_access
+
+- Code modification
+    - added Auto_yaml_generation_and_run.py
+        - Create ymals based on specifiation (scenarios/BEV_vehicle_types_230301 in this case) and default yaml (scenarios/bau_baseline.yaml)
+        - Auto launch the simulations in the batch scenario folder
+        - Save national plugs result to one file (national_plugs_all_scenarios.csv)
+    - modifed (and created a new) ondemand_fleetsim_plugs.py
+        - Add function to save the national plugs, vehicle number and plugs per 1k veh to a csv in the result folder, for later aggregation. 
+
+SCENARIOS
+- Generate scenario.yaml using BEV_vehicle_types_230301.csv
+    - 1 vehicle type per simulation
+        - Use csv to populate base_wh_mi, dcfc_max_kw, veh_kwh_dict
+        - set utilization_perc: 0.2 for all simulations
+        - 80 scenarios: 
+            - 10 vehicle types
+            - 2 res access scenarios (100pct_hc_access, 0pct_hc_access)
+            - 4 tnc shares (0.005, 0.015, 0.03, 0.05, 0.1)
