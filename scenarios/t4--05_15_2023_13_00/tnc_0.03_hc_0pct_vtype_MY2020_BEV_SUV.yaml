@@ -1,0 +1,24 @@
+base_wh_mi: 392.248591
+charge_taper: 0
+dcfc_max_kw: 90
+deadhead_perc: 0.0
+hc_scenario: 0pct_hc_access
+initial_soc: 1
+l2_max_kw: 7.2
+output_dir: ../sim_outputs/t4--05_15_2023_13_00/
+percentile_ambient_conditions: 85
+plug_in_mins: 5
+scenario_name: tnc_0.03_hc_0pct_vtype_MY2020_BEV_SUV
+shift_length_dist:
+  2: 45
+  4: 29
+  6.5: 17
+  10: 9
+sim_days: 150
+soc_high: 0.8
+soc_low: 0.15
+tnc_share: 0.03
+utilization_perc: 0.2
+veh_kwh_dict:
+  73.52458236: 100
+vmt_override_flag: 0

@@ -33,7 +33,7 @@ def write_scenario_trace(output_dir, scenario):
 
 if __name__ == "__main__":
     # Naming a batch process version 
-    batch_version = "t2"
+    batch_version = "t4"
     now = datetime.now()
     dt_string = now.strftime("%m_%d_%Y_%H_%M")
     batch_version = batch_version + '--' + dt_string
@@ -62,9 +62,12 @@ if __name__ == "__main__":
     # Update the values of the inputs in the scenario.yaml file
     global_inputs['output_dir'] = output_dir
     global_inputs['utilization_perc'] = 0.2
+    global_inputs['vmt_override_flag'] = 0
     for tnc_share in [0.005, 0.015, 0.03, 0.05, 0.1]:
+    # for tnc_share in [0.005, 0.015, 0.1]:  # Testing for linearity 
         global_inputs['tnc_share'] = tnc_share
         for hc in ['100pct','0pct']:
+        # for hc in ['100pct','90pct','80pct','70pct','60pct','50pct','40pct','30pct','20pct','10pct','0pct']: # Testing for linearity
             global_inputs['hc_scenario'] = f'{hc}_hc_access'
             for vtype in df_vtype['vehicle_id'].tolist():
                 wh_mi = df_vtype.loc[df_vtype['vehicle_id'] == vtype, 'watt_hour_per_mile'].item()
@@ -89,8 +92,8 @@ for filename in os.listdir(scenario_dir):
     loop_count += 1
     
     # Loop countrol for debug
-    if loop_count > 3:
-        continue 
+    # if loop_count > 3:
+    #     continue 
 
     scenario_name = filename.split('.yaml')[0]
     if filename.endswith('.yaml'):

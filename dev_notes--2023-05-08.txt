@@ -26,3 +26,14 @@ SCENARIOS
             - 10 vehicle types
             - 2 res access scenarios (100pct_hc_access, 0pct_hc_access)
             - 4 tnc shares (0.005, 0.015, 0.03, 0.05, 0.1)
+
+(dev_notes--2023-05-12)
+
+POSTPROCESSING
+- script that generate two tables
+    - Table of cbsa level plugs requirement (based on tnc_share 0.015)
+    - Table of tnc_share to number of vehicles crosswalk. Diffrenciated by cbsa, hc_access. 
+
+SCENARIOS
+- global_inputs['vmt_override_flag'] = 0 for all scenarios
+- Ran scenarios on 05-15 (t4--05_15_2023_13_00). 

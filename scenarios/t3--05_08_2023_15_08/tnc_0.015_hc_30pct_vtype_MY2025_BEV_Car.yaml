@@ -1,0 +1,24 @@
+base_wh_mi: 301.9617488
+charge_taper: 0
+dcfc_max_kw: 100
+deadhead_perc: 0.0
+hc_scenario: 30pct_hc_access
+initial_soc: 1
+l2_max_kw: 7.2
+output_dir: ../sim_outputs/t3--05_08_2023_15_08/
+percentile_ambient_conditions: 85
+plug_in_mins: 5
+scenario_name: tnc_0.015_hc_30pct_vtype_MY2025_BEV_Car
+shift_length_dist:
+  2: 45
+  4: 29
+  6.5: 17
+  10: 9
+sim_days: 150
+soc_high: 0.8
+soc_low: 0.15
+tnc_share: 0.015
+utilization_perc: 0.2
+veh_kwh_dict:
+  78.76353308: 100
+vmt_override_flag: 1
